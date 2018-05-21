@@ -10,8 +10,6 @@ Requirements
 
 - Bash terminal (git bash for windows)
 
-
-
 Install all dependencies
 ```
 npm install

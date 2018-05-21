@@ -5,9 +5,7 @@ Chat room: https://tlk.io/mindera
 
 Requirements
 - Node  8.11.2 LTS
-
 - Text editor (sublime, vscode, atom etc)
-
 - Bash terminal (git bash for windows)
 
 Install all dependencies
@@ -22,7 +20,7 @@ npm start
 [TODO]
 
 - [ ] Create README.md
-- [ ] Create presentation (insert link here)
+- [ ] Create presentation (https://mindera.github.io/fe-techday-workshop/)
 - [ ] Explain the role of `react-apollo`
 - [ ] Create workshop project (create-react-app)
 - [ ] GraphCMS API

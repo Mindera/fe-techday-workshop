@@ -1,31 +1,43 @@
-# fe-techday-workshop
+## WIP
 
+[TODOs]
+- [ ] Create README.md
+- [ ] Create presentation (insert link here)
+- [ ] Explain the role of `react-apollo`
+- [ ] Create workshop project (create-react-app)
+- [ ] GraphCMS API
+
+# Up and running with React and GraphQl using GraphCMS
+
+This workshop is about learning about how to build simple react components and connect them to a graphql layer.
+
+### Workshop resources:
 
 Chat room: https://tlk.io/mindera
+GraphCMS: https://app.graphcms.com/login
+Presentation: https://mindera.github.io/fe-techday-workshop
 
-Requirements
+### Requirements
 - Node  8.11.2 LTS
 - Text editor (sublime, vscode, atom etc)
 - Bash terminal (git bash for windows)
 
+### Running the project
+
+Go to the app folder
+```
+cd ./app
+```
+
 Install all dependencies
 ```
-npm install
+npm i
 ```
 
 To run the app
 ```
 npm start
 ```
-[TODO]
-
-- [ ] Create README.md
-- [ ] Create presentation (insert link here)
-
-- [ ] Explain the role of `react-apollo`
-- [ ] Create workshop project (create-react-app)
-- [ ] GraphCMS API
-
 
 ### Workshop timeline
 

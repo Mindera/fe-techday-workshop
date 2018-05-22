@@ -13,9 +13,9 @@ This workshop is about learning about how to build simple react components and c
 
 ### Workshop resources:
 
-Chat room: https://tlk.io/mindera
-GraphCMS: https://app.graphcms.com/login
-Presentation: https://mindera.github.io/fe-techday-workshop
+- Chat room: https://tlk.io/mindera
+- GraphCMS: https://app.graphcms.com/login
+- Presentation: https://mindera.github.io/fe-techday-workshop
 
 ### Requirements
 - Node  8.11.2 LTS

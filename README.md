@@ -1,11 +1,14 @@
 ## WIP
 
 [TODOs]
-- [ ] Create README.md
-- [ ] Create presentation (insert link here)
+- [x] Create README.md
+- [x] Create presentation
 - [ ] Explain the role of `react-apollo`
-- [ ] Create workshop project (create-react-app)
-- [ ] GraphCMS API
+- [x] Create workshop project (create-react-app)
+- [x] GraphCMS API
+- [ ] Create GraphCMS challenge tutorial
+- [ ] Create React challenge tutorial
+- [ ] Presentation layout (colors, fonts, etc)
 
 # Up and running with React and GraphQl using GraphCMS
 
@@ -50,9 +53,10 @@ Setup (15min)
 - Verify everyone is running the project
 
 ---
-GraphCMS (45min)
+GraphCMS challenge(45min)
 
-- Create model:
+- Step 1
+Create project model:
 ```Project
 type Project @model {
   createdAt: DateTime!
@@ -70,11 +74,24 @@ type Project @model {
   -- Bearer Auth
 
 ---
-React
+React challenge
 
-- Connect API and verify data
-- Create `Title` component
-- Create `Description` component
-- Create `Image` component
-- Create `Technologies` component
+- Step 1
+First of all we need to add a environment variable when running our app
+To that duplicate `.env` file and rename to `.env.local`
+After that add your token
+```
+REACT_APP_GRAPH_CMS_FOLIO_TOKEN=<your token>
+```
 
+- Step 2
+Connect API and verify data structure
+...WIP
+
+- Step 3
+Build layout (WIP)
+Create `Title` component
+Create `Description` component
+Create `Image` component
+Create `Technologies` component
+...WIP

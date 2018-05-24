@@ -5,6 +5,7 @@ import ProjectsListQuery from './graphql/query';
 import ProjectsListQueryOptions from './graphql/options';
 import ProjectListItem from '../ProjectListItem';
 
+import './styles.css';
 
 class ProjectsList extends Component {
   static defaultProps = {

@@ -4,6 +4,8 @@
     --white: white;
     --gray: #F5F5F5;
     --black: black;
+
+    --content-width: 720px;
 }
 
 body {

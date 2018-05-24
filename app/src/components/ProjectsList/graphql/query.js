@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export default gql`
   query ProjectsList {
-    projects: allProjects {
+    projects: allProjects(orderBy:createdAt_DESC) {
       id
       title
       description
@@ -10,6 +10,5 @@ export default gql`
         id
         url
       }
-      technologies
     }
   }`;

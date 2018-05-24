@@ -1,15 +1,7 @@
-header {
-    padding: 60px 0;
-    text-align: center;
-    background-color: var(--main-color);
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
 section.main {
     padding-top: 60px;
     padding-bottom: 60px;
-    max-width: 720px;
+    max-width: var(--content-width);
     margin-left: auto;
     margin-right: auto;
 }

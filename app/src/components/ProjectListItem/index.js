@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import './styles.css';
 
 export default class ProjectListItem extends Component {
   static defaultProps = {
     id: "",
     title: "",
     description: "",
-    technologies: [],
     coverPhotoUrl: ""
   };
 
   render() {
     return (
-      <div>
-        <h3>{this.props.title}</h3>
-        <p>{this.props.description}</p>
-        {this.props.coverPhotoUrl && <img src={this.props.coverPhotoUrl} alt={""} />}
-        <Link to={`/project/${this.props.id}`}>See more!</Link>
+      <div className={"project-list-item-ctn"}>
+        <Link to={`/project/${this.props.id}`}>
+          {<img src={this.props.coverPhotoUrl || "http://placehold.it/250x250/"} alt={""} />}
+          <div className={"project-list-item-details"}>
+            <strong>{this.props.title}</strong>
+            <p>{this.props.description}</p>
+          </div>
+        </Link>
       </div>
     );
   }

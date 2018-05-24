@@ -12,9 +12,7 @@ export default class App extends Component {
   render() {
     return (
       <Fragment>
-        <header className={"header"}>
-          <Header />
-        </header>
+        <Header />
         <Router>
           <section className={"main"}>
             <Route exact path="/" component={ProjectsList}/>

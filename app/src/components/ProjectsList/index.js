@@ -14,6 +14,7 @@ class ProjectsList extends Component {
   render() {
     const Projects = this.props.projects.map(project => (
       <ProjectListItem key={project.id}
+                       id={project.id}
                        title={project.title}
                        description={project.description}
                        coverPhotoUrl={project.images && project.images.length ? project.images[0].url : ""}

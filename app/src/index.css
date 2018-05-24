@@ -2,10 +2,11 @@
     --main-color: #fdd341;
     --secondary-color: darkslateblue;
     --white: white;
-    --gray: gray;
+    --gray: #F5F5F5;
     --black: black;
 }
 
 body {
     font-family: 'Tajawal', sans-serif;
+    background-color: var(--gray);
 }

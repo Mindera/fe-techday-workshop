@@ -1,3 +1,19 @@
+.header-container {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .header-photo {
     width: 150px;
+}
+
+.header-social-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.header-social-container > a {
+    text-decoration: none;
 }

@@ -3,12 +3,12 @@ export default {
     return {
       fetchPolicy: "cache-and-network",
       variables: {
-        id: "cjhkqyk3lcitu01602egbf041"
+        id: props.match.params.id
       }
     };
   },
 
   props: (result) => {
-    return { ...result.data.myAccount };
+    return { ...result.data.project, isLoading: result.data.loading };
   }
 };

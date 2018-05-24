@@ -42,21 +42,43 @@ To run the app
 npm start
 ```
 
-### Workshop timeline
+### Workshop timeline summary
 
 Presentation (10/15min)
 
 ---
 Setup (15min)
+---
+GraphCMS challenge(45min)
+
+---
+
+React (45min)
+
+---
+
+Questions
+
+
+
+### Workshop Challenge
+
+Setup
 - Install node
 - Clone project
 - Verify everyone is running the project
 
----
-GraphCMS challenge(45min)
 
-- Step 1
-Create project model:
+
+GraphCMS 
+
+- Create GraphCMS account in https://app.graphcms.com/signup
+
+- Create a `New Project` from `Scratch`
+
+- After that we can start building our models
+  
+  Create project model:
 ```Project
 type Project @model {
   createdAt: DateTime!
@@ -73,6 +95,9 @@ type Project @model {
 - API authentication
   -- Bearer Auth
 
+Extra
+You can try their BETA https://beta.graphcms.com/
+
 ---
 React challenge
 
@@ -82,6 +107,7 @@ To that duplicate `.env` file and rename to `.env.local`
 After that add your token
 ```
 REACT_APP_GRAPH_CMS_FOLIO_TOKEN=<your token>
+REACT_APP_GRAPH_CMS_FOLIO_ID=<your graphcms id>
 ```
 
 - Step 2

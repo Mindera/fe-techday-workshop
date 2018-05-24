@@ -122,16 +122,36 @@ REACT_APP_GRAPH_CMS_FOLIO_ID=<your graphcms id>
 ```
 
 - Step 2
-Connect API and verify data structure
-...WIP
-
+  Connect API and verify data structure
+  ...WIP
 - Step 3
-Build layout (WIP)
-Create `Title` component
-Create `Description` component
-Create `Image` component
-Create `Technologies` component
-...WIP
+  Build layout (WIP)
+  Create `Title` component
+  Create `Description` component
+  Create `Image` component
+  Create `Technologies` component
+  ...WIP
+
+#### Deploy
+- Install firebase tools globally
+```
+npm install -g firebase-tools
+```
+- Now you need to login into firebase...
+```
+firebase login
+```
+- Create a new project on firebase
+```
+firebase init
+```
+- Follow the command line instructions
+- After everything just run
+```
+firebase deploy
+```
+
+
 
 #### Extra
 You can try their BETA https://beta.graphcms.com

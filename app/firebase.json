@@ -5,6 +5,12 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/notify",
+        "function": "app"
+      }
     ]
   }
 }

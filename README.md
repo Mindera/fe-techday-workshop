@@ -47,8 +47,11 @@ npm start
 Presentation (10/15min)
 
 ---
+
 Setup (15min)
+
 ---
+
 GraphCMS challenge(45min)
 
 ---
@@ -56,10 +59,7 @@ GraphCMS challenge(45min)
 React (45min)
 
 ---
-
 Questions
-
-
 
 ### Workshop Challenge
 
@@ -67,38 +67,49 @@ Setup
 - Install node
 - Clone project
 - Verify everyone is running the project
-
-
-
-GraphCMS 
-
 - Create GraphCMS account in https://app.graphcms.com/signup
+
+GraphCMS challenge
+
+- Login into GraphCMS
 
 - Create a `New Project` from `Scratch`
 
 - After that we can start building our models
-  
-  Create project model:
+
+
+Create `Technologies` from `enum` type:
+```
+enum TechnologiesList {
+    Node
+    React
+    Angular
+    Jquery
+    Html
+    Css
+    Sass
+    Graph
+  }
+```
+
+Create `Project` from `model` type:
 ```Project
 type Project @model {
-  createdAt: DateTime!
-  description: String @defaultValue(value: "Project description")
-  id: ID! @isUnique
-  isPublished: Boolean! @defaultValue(value: false)
-  projectImages: [Asset!]! @relation(name: "AssetProjectProjectImages")
-  technologies: [TechnologiesList!]
-  title: String! @defaultValue(value: "Project title")
-  updatedAt: DateTime!
+    description: String @defaultValue(value: "Project description")
+    projectImages: [Asset!]! @relation(name: "AssetProjectProjectImages")
+    technologies: [TechnologiesList!]
+    title: String! @defaultValue(value: "Project title")
 }
 ```
 
-- API authentication
-  -- Bearer Auth
+- Test you model on the `API Explorer`
 
-Extra
-You can try their BETA https://beta.graphcms.com/
+Your service is done! Congratulations!
+
+Lets start coding!
 
 ---
+
 React challenge
 
 - Step 1
@@ -121,3 +132,6 @@ Create `Description` component
 Create `Image` component
 Create `Technologies` component
 ...WIP
+
+- Extra
+You can try their BETA https://beta.graphcms.com

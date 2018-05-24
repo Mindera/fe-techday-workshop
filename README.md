@@ -6,7 +6,7 @@
 - [ ] Explain the role of `react-apollo`
 - [x] Create workshop project (create-react-app)
 - [x] GraphCMS API
-- [ ] Create GraphCMS challenge tutorial
+- [x] Create GraphCMS challenge tutorial
 - [ ] Create React challenge tutorial
 - [ ] Presentation layout (colors, fonts, etc)
 
@@ -63,13 +63,13 @@ Questions
 
 ### Workshop Challenge
 
-Setup
+#### Setup
 - Install node
 - Clone project
 - Verify everyone is running the project
 - Create GraphCMS account in https://app.graphcms.com/signup
 
-GraphCMS challenge
+#### GraphCMS challenge
 
 - Login into GraphCMS
 
@@ -110,7 +110,7 @@ Lets start coding!
 
 ---
 
-React challenge
+#### React challenge
 
 - Step 1
 First of all we need to add a environment variable when running our app
@@ -133,5 +133,5 @@ Create `Image` component
 Create `Technologies` component
 ...WIP
 
-- Extra
+#### Extra
 You can try their BETA https://beta.graphcms.com

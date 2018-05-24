@@ -14,11 +14,17 @@ import {
   Text,
   CodePane,
   Code,
+  Fit,
+  Fill,
+  Layout,
+  S,
+  Image
 } from "spectacle";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
-import ReactDOM from "react-dom";
+import apolloClientLogo from "../assets/apollo-logo.png";
+import reactLogo from "../assets/react-logo.svg";
 
 // Require CSS
 require("normalize.css");
@@ -34,6 +40,49 @@ const theme = createTheme({
   secondary: "Helvetica"
 });
 
+const NormalReactWrapComponent = `ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+);`;
+
+const ApolloWrapComponent = `ReactDOM.render(
+    <ApolloProvider client={client}>
+        <App/>
+    </ApolloProvider>,
+    document.getElementById('root')
+);`;
+
+
+const ApolloClientBasic = `import ApolloClient from "apollo-boost";
+
+const client = new ApolloClient({
+  uri: "https://api.graphcms.com/simple/v1/[GRAPHCMS PROJECT ID]"
+});`;
+
+
+const ApolloClientAuthed = `import { ApolloClient } from 'apollo-client';
+import { createHttpLink } from 'apollo-link-http';
+import { setContext } from 'apollo-link-context';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
+const httpLink = createHttpLink({
+  uri: "https://api.graphcms.com/simple/v1/[GRAPHCMS PROJECT ID]",
+});
+
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      authorization: Bearer [GRAPHCMS API TOKEN],
+    }
+  }
+});
+
+export const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+});`;
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -42,45 +91,64 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
               Up and running with React and GraphQL
             </Heading>
-            {/*<Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>*/}
-            {/*open the presentation/index.js file to get started*/}
-            {/*</Text>*/}
           </Slide>
-          <Slide transition={["fade"]} bgColor="tertiary">
-            <Heading size={6} textColor="primary" caps>Typography</Heading>
-            <Heading size={1} textColor="secondary">Heading 1</Heading>
-            <Heading size={2} textColor="secondary">Heading 2</Heading>
-            <Heading size={3} textColor="secondary">Heading 3</Heading>
-            <Heading size={4} textColor="secondary">Heading 4</Heading>
-            <Heading size={5} textColor="secondary">Heading 5</Heading>
-            <Text size={6} textColor="secondary">Standard text</Text>
-          </Slide>
+
           <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-            <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-            <List>
-              <ListItem>Item 1</ListItem>
-              <ListItem>Item 2</ListItem>
-              <ListItem>Item 3</ListItem>
-              <ListItem>Item 4</ListItem>
-            </List>
+            <Text margin={30}>Wrapping our app with Apollo</Text>
+            <Layout style={{alignItems: "center", justifyContent: "space-between"}}>
+              <Fill>
+                <Image src={apolloClientLogo} />
+              </Fill>
+              <Fit style={{marginRight: "30px", marginLeft: "30px"}}>
+                <Text textSize={50}>➕</Text>
+              </Fit>
+              <Fill>
+                <Image src={reactLogo} height={200}/>
+              </Fill>
+            </Layout>
           </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <BlockQuote>
-              <Quote>Example Quote</Quote>
-              <Cite>Author</Cite>
-            </BlockQuote>
-          </Slide>
+
           <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-            <CodePane source={test}/>
+            <Text margin={30}>Wrapping our app with Apollo</Text>
+            <Layout style={{alignItems: "center"}}>
+              <Fill>
+                <CodePane source={NormalReactWrapComponent} lang={"javascript"}/>
+              </Fill>
+              <Fit style={{marginRight: "30px", marginLeft: "30px"}}>
+                <Text textSize={50}>➡️</Text>
+              </Fit>
+              <Fill>
+                <CodePane source={ApolloWrapComponent} lang={"javascript"}/>
+              </Fill>
+            </Layout>
           </Slide>
+
+          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+            <Text margin={30}>The <S type={"italic"}>basic</S> client</Text>
+
+            <Layout style={{alignItems: "center"}}>
+              <Fill>
+                <CodePane source={ApolloClientBasic} lang={"javascript"}/>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+            <Text>What about <S type={"bold"}>Authentication?</S></Text>
+          </Slide>
+
+          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+            <Text margin={30} lineHeight={32}>A more <S type={"italic"}>complex</S> version</Text>
+
+            <Layout style={{alignItems: "center"}}>
+              <Fill>
+                <CodePane source={ApolloClientAuthed} lang={"javascript"}/>
+              </Fill>
+            </Layout>
+          </Slide>
+
         </Deck>
     );
   }
 }
 
-const test = `
-<ListItem>Item 1</ListItem>
-<ListItem>Item 2</ListItem>
-<ListItem>Item 3</ListItem>
-<ListItem>Item 4</ListItem>
-`

@@ -8,10 +8,9 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-
-  console.log(process.env.REACT_APP_GRAPH_CMS_FOLIO_TOKEN);
   // get the authentication token from local storage if it exists
   const token = process.env.REACT_APP_GRAPH_CMS_FOLIO_TOKEN || '';
+
   // return the headers to the context so httpLink can read them
   return {
     headers: {

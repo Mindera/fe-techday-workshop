@@ -1,5 +1,11 @@
+:root {
+    --main-color: #fdd341;
+    --secondary-color: darkslateblue;
+    --white: white;
+    --gray: gray;
+    --black: black;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    font-family: 'Tajawal', sans-serif;
 }

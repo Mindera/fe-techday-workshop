@@ -1,17 +1,5 @@
 import gql from "graphql-tag";
 
 export default gql`
-  query Project($id: ID!) {
-    project:Project(id:$id) {
-      id
-      title
-      description
-      technologies
-      projectImages {
-        id
-        size
-        fileName
-        url
-      }
-    }
-  }`;
+The project detail query comes here! (hint: use the GraphCMS explorer to create it, copy and paste here
+`;

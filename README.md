@@ -10,7 +10,7 @@
 - [ ] Create React challenge tutorial
 - [ ] Presentation layout (colors, fonts, etc)
 
-# Up and running with React and GraphQl using GraphCMS
+# Up and running with React and GraphQL
 
 This workshop is about learning about how to build simple react components and connect them to a graphql layer.
 
@@ -52,7 +52,7 @@ Setup (15min)
 
 ---
 
-GraphCMS challenge(45min)
+GraphCMS challenge (45min)
 
 ---
 
@@ -61,6 +61,8 @@ React (45min)
 ---
 Questions
 
+
+
 ### Workshop Challenge
 
 #### Setup
@@ -68,6 +70,12 @@ Questions
 - Clone project
 - Verify everyone is running the project
 - Create GraphCMS account in https://app.graphcms.com/signup
+
+
+
+---
+
+
 
 #### GraphCMS challenge
 
@@ -110,29 +118,29 @@ Lets start coding!
 
 ---
 
+
+
 #### React challenge
 
-- Step 1
-First of all we need to add a environment variable when running our app
-To that duplicate `.env` file and rename to `.env.local`
-After that add your token
+The goal of the React challange is to create an app in which you can showcase your own projects on a list, and then access each one individually to check the details on a detail page.
+
+The list is already implemented and the implementation will be explained, then it's up to you to create the detail page and connect it to the GraphQL server.
+
+First of all, duplicate the `.env` file, rename it to `.env.local` and fill it with the GraphCMS token and ID:
+
 ```
 REACT_APP_GRAPH_CMS_FOLIO_TOKEN=<your token>
 REACT_APP_GRAPH_CMS_FOLIO_ID=<your graphcms id>
 ```
 
-- Step 2
-  Connect API and verify data structure
-  ...WIP
-- Step 3
-  Build layout (WIP)
-  Create `Title` component
-  Create `Description` component
-  Create `Image` component
-  Create `Technologies` component
-  ...WIP
+
 
 #### Deploy
+
+- First you need to generate the distribution build
+```
+npm run build
+```
 - Install firebase tools globally
 ```
 npm install -g firebase-tools
@@ -145,8 +153,7 @@ firebase login
 ```
 firebase init
 ```
-- Follow the command line instructions
-- After everything just run
+- Follow the command line instructions, and then
 ```
 firebase deploy
 ```

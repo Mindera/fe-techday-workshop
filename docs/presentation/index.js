@@ -53,24 +53,19 @@ const theme = createTheme({
 export default class Presentation extends React.Component {
   render() {
     return (
-        <Deck transition={["zoom", "slide"]} transitionDuration={250} theme={theme} contentWidth={1250} contentHeight={1000} progress={"none"}>
-          <Slide transition={["zoom"]} bgColor="primary">
+        <Deck transition={["fade"]} transitionDuration={250} theme={theme} contentWidth={1250} contentHeight={1000} progress={"none"}>
+          <Slide>
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
                 Up and running with React and GraphQL
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide>
             <Text margin={30} textSize={60} bold>What is the goal of this workshop?</Text>
             <Text textSize={28}>To build your own portfolio from ground-up and publish it on the web, using a CMS powered GraphQL server and a javascript React app</Text>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Text margin={30} textSize={60} bold>What is the goal of this workshop?</Text>
-            <Text textSize={28}>To build your own portfolio from ground-up and publish it on the web, using a CMS powered GraphQL server and a javascript React app</Text>
-          </Slide>
-
-          <Slide transition={["fade"]}>
+          <Slide>
             <Layout style={{alignItems: "center", justifyContent: "space-between"}}>
               <Fill>
                 <Image src={reactLogo} width={400} />
@@ -84,7 +79,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text margin={50} textSize={50}>What makes Apolllo so cool?</Text>
             <List type={"A"} ordered style={{textAlign: "center"}}>
               <Appear>
@@ -102,7 +97,7 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text margin={30}>Wrapping our app with Apollo</Text>
             <Layout style={{alignItems: "center"}}>
               <Fill>
@@ -117,7 +112,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text margin={30}>The <S type={"italic"}>basic</S> client</Text>
 
             <Layout style={{alignItems: "center"}}>
@@ -127,11 +122,11 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text textSize={60}>What about <S type={"bold"}>Authentication?</S></Text>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text margin={30} lineHeight={32}>A more <S type={"italic"}>complex</S> version</Text>
 
             <Layout style={{alignItems: "center"}}>
@@ -141,26 +136,26 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text margin={30} textSize={35}>React: the common use-case</Text>
             <CodePane textSize={22} source={ReactComponentBasicFetchData} lang={"javascript"}/>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text>So, what does Apollo + GraphQL have to offer to make it simpler?</Text>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
               <Text margin={30} textSize={35}>This is what it looks like</Text>
               <CodePane textSize={22} source={ReactComponentWithQueryBasic} lang={"javascript"}/>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text margin={30} textSize={35}>But wait, there's a lot of <S type={"italic"}>noise</S> in that code 🤔</Text>
               <CodePane textSize={22} source={ApolloPropsPoluted} lang={"javascript"}/>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Layout>
               <Fill>
             <Text margin={30} textSize={35}>The <Code lang={"javascript"}>graphql</Code> function second parameter</Text>
@@ -169,7 +164,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Layout>
               <Fill>
                 <Text margin={30} textSize={35}>This way, our component will look like this 👇</Text>
@@ -178,7 +173,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Layout style={{alignItems: "center"}}>
               <Fill>
                 <CodePane textSize={18} source={ReactComponentWithQueryBasic} lang={"javascript"}/>
@@ -192,7 +187,7 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]}>
+          <Slide>
             <Text textSize={80} margin={30} bold>Your turn now! 💪</Text>
           </Slide>
         </Deck>

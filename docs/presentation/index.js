@@ -108,7 +108,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Text margin={50} textSize={50}>What makes Apolllo so cool?</Text>
+            <Text margin={50} textSize={50}>What makes Apollo so cool?</Text>
             <List type={"A"} ordered style={{textAlign: "center"}}>
               <Appear>
                 <ListItem textColor={"black"}>Smooth integration with React</ListItem>
@@ -146,20 +146,6 @@ export default class Presentation extends React.Component {
             <Layout style={{alignItems: "center"}}>
               <Fill>
                 <CodePane textSize={22} source={ApolloClientBasic} lang={"javascript"}/>
-              </Fill>
-            </Layout>
-          </Slide>
-
-          <Slide>
-            <Text textSize={60}>What about <S type={"bold"}>Authentication?</S></Text>
-          </Slide>
-
-          <Slide>
-            <Text margin={30} lineHeight={32}>A more <S type={"italic"}>complex</S> version</Text>
-
-            <Layout style={{alignItems: "center"}}>
-              <Fill>
-                <CodePane textSize={22} source={ApolloClientAuthed} lang={"javascript"}/>
               </Fill>
             </Layout>
           </Slide>

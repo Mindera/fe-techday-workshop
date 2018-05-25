@@ -36,9 +36,7 @@ export const client = new ApolloClient({
 
 export const ReactComponentBasicFetchData = `class ProjectDetail extends Component {
   componentDidMount() {
-    // first we need to make a request to some REST API to get the project by its ID
-    makeSomeRequestForData(this.props.projectId).then(response => {
-      // when we get a response, we then need to set it to the state of this component
+    axios.get("https://api.portfolio.com/v1/project/131234").then(response => {
       this.setState({
         project: response.data
       });
@@ -135,3 +133,81 @@ class ProjectDetail extends Component {
 }
 
 export default graphql(ProjectDetailQuery, ProjectDetailQueryOptions)(ProjectDetail);`;
+
+export const ReactBasicComponent = `class App extends Component {
+  render() {
+    return (<div>Hello World 👋</div>);
+  }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);`;
+
+
+export const ReactBasicComponentWithProps = `class App extends Component {
+  render() {
+    return (<div>Hello {this.props.name} 👋</div>);
+  }
+}
+
+ReactDOM.render(
+    <App name={"mindera"} />,
+    document.getElementById('root')
+);`;
+
+
+export const ReactBasicComponentWithState = `class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0
+    };
+  }
+
+  increment() {
+    this.setState((prevState, props) => ({
+      counter: prevState.counter + 1
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={() => this.increment()}>
+        Called {this.state.counter} times
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);`;
+
+
+export const ReactBasicComponentWithLifeCycle = `class App extends Component {
+  componentWillMount() {
+    // this executes before the component starts "mounting"
+  }
+  
+  componentDidMount() {
+    // this will execute when the component finished "mounting"
+  }
+  
+  componentWillUpdate(nextProps) {
+    // this will execute when a prop changes and before re-rendering
+    // you have access to the nextProps in this function
+  }
+  
+  render() {
+    // this will execute everytime(*) the props change
+    return <div>Hello {this.props.name} 👋</div>;
+  }
+}
+
+ReactDOM.render(
+    <App name={"mindera"} />,
+    document.getElementById('root')
+);`;

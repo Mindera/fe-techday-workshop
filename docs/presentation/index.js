@@ -32,7 +32,11 @@ import {
   NormalReactWrapComponent,
   ReactComponentBasicFetchData,
   ReactComponentWithQueryBasic,
-  ReactComponentWithQueryComplex
+  ReactComponentWithQueryComplex,
+  ReactBasicComponent,
+  ReactBasicComponentWithProps,
+  ReactBasicComponentWithState,
+  ReactBasicComponentWithLifeCycle
 } from "./react-snippets";
 
 // Require CSS
@@ -77,6 +81,30 @@ export default class Presentation extends React.Component {
                 <Image src={apolloClientLogo} width={400} />
               </Fill>
             </Layout>
+          </Slide>
+
+          <Slide>
+            <Text textSize={50}>Super basic React 101</Text>
+          </Slide>
+
+          <Slide>
+            <Text margin={50} textSize={50}>This is a super basic React basic component</Text>
+            <CodePane lang={"jsx"} textSize={22} source={ReactBasicComponent} />
+          </Slide>
+
+          <Slide>
+            <Text margin={50} textSize={50}>Every component has it's <Code>props</Code></Text>
+            <CodePane lang={"jsx"} textSize={22} source={ReactBasicComponentWithProps} />
+          </Slide>
+
+          <Slide>
+            <Text margin={50} textSize={50}>It can also have a <Code>state</Code></Text>
+            <CodePane lang={"jsx"} textSize={22} source={ReactBasicComponentWithState} />
+          </Slide>
+
+          <Slide>
+            <Text margin={50} textSize={50}>Also, a <Code>lifecycle</Code></Text>
+            <CodePane lang={"jsx"} textSize={22} source={ReactBasicComponentWithLifeCycle} />
           </Slide>
 
           <Slide>

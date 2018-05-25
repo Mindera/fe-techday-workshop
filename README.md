@@ -1,15 +1,3 @@
-## WIP
-
-[TODOs]
-- [x] Create README.md
-- [x] Create presentation
-- [ ] Explain the role of `react-apollo`
-- [x] Create workshop project (create-react-app)
-- [x] GraphCMS API
-- [x] Create GraphCMS challenge tutorial
-- [ ] Create React challenge tutorial
-- [ ] Presentation layout (colors, fonts, etc)
-
 # Up and running with React and GraphQL
 
 This workshop is about learning about how to build simple react components and connect them to a graphql layer.

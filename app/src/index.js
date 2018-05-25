@@ -4,7 +4,6 @@ import { ApolloProvider } from 'react-apollo';
 
 import { client } from './api';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
 
 import 'normalize.css';
@@ -17,5 +16,3 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root')
 );
-
-registerServiceWorker();

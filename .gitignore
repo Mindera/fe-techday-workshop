@@ -19,7 +19,9 @@
 /app/npm-debug.log*
 /app/yarn-debug.log*
 /app/yarn-error.log*
+/app/*.log
 
 # IDE
 .idea/
 .vscode/
+

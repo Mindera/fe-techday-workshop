@@ -3,13 +3,10 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
   Text,
   CodePane,
@@ -18,13 +15,25 @@ import {
   Fill,
   Layout,
   S,
-  Image
+  Image,
+  Appear,
 } from "spectacle";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 import apolloClientLogo from "../assets/apollo-logo.png";
 import reactLogo from "../assets/react-logo.svg";
+import {
+  ApolloClientAuthed,
+  ApolloClientBasic,
+  ApolloPropsPoluted,
+  ApolloWrapComponent,
+  FinalReactComponent,
+  NormalReactWrapComponent,
+  ReactComponentBasicFetchData,
+  ReactComponentWithQueryBasic,
+  ReactComponentWithQueryComplex
+} from "./react-snippets";
 
 // Require CSS
 require("normalize.css");
@@ -34,119 +43,158 @@ const theme = createTheme({
   secondary: "#1F2022",
   tertiary: "#03A9FC",
   quarternary: "#CECECE",
-  theme: 'light'
+  theme: "external"
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
 });
 
-const NormalReactWrapComponent = `ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
-);`;
-
-const ApolloWrapComponent = `ReactDOM.render(
-    <ApolloProvider client={client}>
-        <App/>
-    </ApolloProvider>,
-    document.getElementById('root')
-);`;
-
-
-const ApolloClientBasic = `import ApolloClient from "apollo-boost";
-
-const client = new ApolloClient({
-  uri: "https://api.graphcms.com/simple/v1/[GRAPHCMS PROJECT ID]"
-});`;
-
-
-const ApolloClientAuthed = `import { ApolloClient } from 'apollo-client';
-import { createHttpLink } from 'apollo-link-http';
-import { setContext } from 'apollo-link-context';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-
-const httpLink = createHttpLink({
-  uri: "https://api.graphcms.com/simple/v1/[GRAPHCMS PROJECT ID]",
-});
-
-const authLink = setContext((_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      authorization: Bearer [GRAPHCMS API TOKEN],
-    }
-  }
-});
-
-export const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
-});`;
 
 export default class Presentation extends React.Component {
   render() {
     return (
-        <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+        <Deck transition={["zoom", "slide"]} transitionDuration={250} theme={theme} contentWidth={1250} contentHeight={1000} progress={"none"}>
           <Slide transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-              Up and running with React and GraphQL
+                Up and running with React and GraphQL
             </Heading>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-            <Text margin={30}>Wrapping our app with Apollo</Text>
+          <Slide transition={["zoom"]} bgColor="primary">
+            <Text margin={30} textSize={60} bold>What is the goal of this workshop?</Text>
+            <Text textSize={28}>To build your own portfolio from ground-up and publish it on the web, using a CMS powered GraphQL server and a javascript React app</Text>
+          </Slide>
+
+          <Slide transition={["zoom"]} bgColor="primary">
+            <Text margin={30} textSize={60} bold>What is the goal of this workshop?</Text>
+            <Text textSize={28}>To build your own portfolio from ground-up and publish it on the web, using a CMS powered GraphQL server and a javascript React app</Text>
+          </Slide>
+
+          <Slide transition={["fade"]}>
             <Layout style={{alignItems: "center", justifyContent: "space-between"}}>
               <Fill>
-                <Image src={apolloClientLogo} />
+                <Image src={reactLogo} width={400} />
               </Fill>
               <Fit style={{marginRight: "30px", marginLeft: "30px"}}>
                 <Text textSize={50}>➕</Text>
               </Fit>
               <Fill>
-                <Image src={reactLogo} height={200}/>
+                <Image src={apolloClientLogo} width={400} />
               </Fill>
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Slide transition={["fade"]}>
+            <Text margin={50} textSize={50}>What makes Apolllo so cool?</Text>
+            <List type={"A"} ordered style={{textAlign: "center"}}>
+              <Appear>
+                <ListItem textColor={"black"}>Smooth integration with React</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textColor={"black"}>It has an internal cache system</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textColor={"black"}>Community-driven / Open source</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem textColor={"black"}>Easy to get started with</ListItem>
+              </Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={["fade"]}>
             <Text margin={30}>Wrapping our app with Apollo</Text>
             <Layout style={{alignItems: "center"}}>
               <Fill>
-                <CodePane source={NormalReactWrapComponent} lang={"javascript"}/>
+                <CodePane textSize={22} source={NormalReactWrapComponent} lang={"javascript"}/>
               </Fill>
               <Fit style={{marginRight: "30px", marginLeft: "30px"}}>
                 <Text textSize={50}>➡️</Text>
               </Fit>
               <Fill>
-                <CodePane source={ApolloWrapComponent} lang={"javascript"}/>
+                <CodePane textSize={22} source={ApolloWrapComponent} lang={"javascript"}/>
               </Fill>
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Slide transition={["fade"]}>
             <Text margin={30}>The <S type={"italic"}>basic</S> client</Text>
 
             <Layout style={{alignItems: "center"}}>
               <Fill>
-                <CodePane source={ApolloClientBasic} lang={"javascript"}/>
+                <CodePane textSize={22} source={ApolloClientBasic} lang={"javascript"}/>
               </Fill>
             </Layout>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-            <Text>What about <S type={"bold"}>Authentication?</S></Text>
+          <Slide transition={["fade"]}>
+            <Text textSize={60}>What about <S type={"bold"}>Authentication?</S></Text>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Slide transition={["fade"]}>
             <Text margin={30} lineHeight={32}>A more <S type={"italic"}>complex</S> version</Text>
 
             <Layout style={{alignItems: "center"}}>
               <Fill>
-                <CodePane source={ApolloClientAuthed} lang={"javascript"}/>
+                <CodePane textSize={22} source={ApolloClientAuthed} lang={"javascript"}/>
               </Fill>
             </Layout>
           </Slide>
 
+          <Slide transition={["fade"]}>
+            <Text margin={30} textSize={35}>React: the common use-case</Text>
+            <CodePane textSize={22} source={ReactComponentBasicFetchData} lang={"javascript"}/>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            <Text>So, what does Apollo + GraphQL have to offer to make it simpler?</Text>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+              <Text margin={30} textSize={35}>This is what it looks like</Text>
+              <CodePane textSize={22} source={ReactComponentWithQueryBasic} lang={"javascript"}/>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            <Text margin={30} textSize={35}>But wait, there's a lot of <S type={"italic"}>noise</S> in that code 🤔</Text>
+              <CodePane textSize={22} source={ApolloPropsPoluted} lang={"javascript"}/>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            <Layout>
+              <Fill>
+            <Text margin={30} textSize={35}>The <Code lang={"javascript"}>graphql</Code> function second parameter</Text>
+            <CodePane textSize={22} source={ReactComponentWithQueryComplex} lang={"javascript"}/>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            <Layout>
+              <Fill>
+                <Text margin={30} textSize={35}>This way, our component will look like this 👇</Text>
+                <CodePane textSize={22} source={FinalReactComponent} lang={"javascript"}/>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            <Layout style={{alignItems: "center"}}>
+              <Fill>
+                <CodePane textSize={18} source={ReactComponentWithQueryBasic} lang={"javascript"}/>
+              </Fill>
+              <Fit style={{marginRight: "15px", marginLeft: "15px"}}>
+                <Text textSize={50}>➡️</Text>
+              </Fit>
+              <Fill>
+                <CodePane textSize={18} source={FinalReactComponent} lang={"javascript"}/>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={["fade"]}>
+            <Text textSize={80} margin={30} bold>Your turn now! 💪</Text>
+          </Slide>
         </Deck>
     );
   }

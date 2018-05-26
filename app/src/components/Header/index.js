@@ -1,41 +1,24 @@
-import React, { Component } from 'react';
-import { graphql } from 'react-apollo/index';
+import React  from 'react';
 
-import HeaderQuery from './graphql/query';
-import HeaderQueryOptions from './graphql/options';
-
-
+import bradPittPhoto from './brad-pitt.png';
 import './styles.css';
 
 
-class Header extends Component {
-  static defaultProps = {
-    name: "",
-    description: "",
-    photo: {
-      url: ""
-    },
-    linkedInUrl: "",
-    facebookUrl: "",
-    twitterUrl: ""
-  };
+const Header = () => (
+  <header>
+    <div className={"header-container"}>
+      <img src={bradPittPhoto} alt={""} className="header-photo"/>
+      <h1>Brad Pitt</h1>
+      <p>Hi there, I'm a passionate front-end developer who loves to build beautiful interfaces using the most
+        modern web technologies. This portfolio for example, is built using React and GraphQL, these are just some
+        of the technologies I love! I'm currently looking for an opportunity in Porto, give me a call</p>
+      <div className={"header-social-container"}>
+        <a href={"https://twitter.com/i/flow/consent_violation_flow"} target="_blank"><i className="fab fa-twitter"/> Twitter</a>
+        <a href={"https://www.facebook.com/actorbradpitt"} target="_blank"><i className="fab fa-facebook-f"/> Facebook</a>
+        <a href={"https://www.linkedin.com/in/brad-pitt-6236b5151/"} target="_blank"><i className="fab fa-linkedin-in"/> LinkedIn</a>
+      </div>
+    </div>
+  </header>
+);
 
-  render() {
-    return (
-      <header>
-        <div className={"header-container"}>
-          <img src={this.props.photo.url} alt={""} className="header-photo" />
-          <h1>{this.props.name}</h1>
-          <p>{this.props.description}</p>
-          <div className={"header-social-container"}>
-            <a href={this.props.twitterUrl} target="_blank"><i className="fab fa-twitter" /> Twitter</a>
-            <a href={this.props.facebookUrl} target="_blank"><i className="fab fa-facebook-f" /> Facebook</a>
-            <a href={this.props.linkedInUrl} target="_blank"><i className="fab fa-linkedin-in" /> LinkedIn</a>
-          </div>
-        </div>
-      </header>
-    );
-  }
-}
-
-export default graphql(HeaderQuery, HeaderQueryOptions)(Header);
+export default Header;

@@ -38,7 +38,7 @@ const BodyText = ({ children, ...other }) => (
 const structureWords = [
   'Setup machines',
   'Build GraphQL service',
-  'Build Folio app using React',
+  'Build a portfolio app using React',
   'Deploy using Firebase',
 ];
 
@@ -51,6 +51,9 @@ const glossaryWords = [
   'React Apollo',
   'Firebase'
 ];
+
+const chatLink = 'https://tlk.io/mindera';
+const repoLink = 'https://github.com/Mindera/fe-techday-workshop';
 
 const Slides = [
   <Fragment>
@@ -76,6 +79,14 @@ const Slides = [
   <Fragment>
     <TitleText bold>Let's get started!</TitleText>
     <div>💪</div>
+  </Fragment>,
+  <Fragment>
+    <TitleText bold>{chatLink}</TitleText>
+    <BodyText>workshop chat</BodyText>
+  </Fragment>,
+  <Fragment>
+    <TitleText bold>Workshop repo</TitleText>
+    <BodyText>{repoLink}</BodyText>
   </Fragment>,
   <Fragment>
     <Image src={GraphLogo}/>

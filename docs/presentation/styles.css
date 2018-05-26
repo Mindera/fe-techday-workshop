@@ -1,0 +1,13 @@
+@-webkit-keyframes pulsate {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(25%)
+    }
+}
+
+.minder {
+    animation: pulsate 1.5s ease-in-out 0s infinite forwards;
+    -webkit-animation-direction: alternate;
+}

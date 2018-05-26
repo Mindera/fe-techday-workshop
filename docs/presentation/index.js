@@ -18,8 +18,9 @@ import {
   S,
   Image,
   Appear,
-  Markdown
 } from "spectacle";
+
+import './styles.css';
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
@@ -82,7 +83,7 @@ export default class Presentation extends Component {
                 </Heading>
               </Fit>
               <Fit style={{marginTop: '100px'}}>
-                <Image height={80} src={minder} />
+                <Image className="minder" height={80} src={minder} />
               </Fit>
             </Layout>
           </Slide>

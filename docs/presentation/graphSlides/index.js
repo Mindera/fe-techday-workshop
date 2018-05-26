@@ -36,7 +36,7 @@ const BodyText = ({ children, ...other }) => (
 );
 
 const structureWords = [
-  'Setup',
+  'Setup machines',
   'Build GraphQL service',
   'Build Folio app using React',
   'Deploy using Firebase',
@@ -73,6 +73,10 @@ const Slides = [
         ))}
       </div>
     </Fragment>,
+  <Fragment>
+    <TitleText bold>Let's get started!</TitleText>
+    <div>💪</div>
+  </Fragment>,
   <Fragment>
     <Image src={GraphLogo}/>
     <TitleText bold>GraphQL</TitleText>

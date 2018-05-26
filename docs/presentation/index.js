@@ -74,7 +74,7 @@ export default class Presentation extends Component {
   render() {
     return (
         <Deck transition={["fade"]} transitionDuration={250} theme={theme} contentWidth={1250} contentHeight={1000} progress={"none"}>
-          <Slide bgImage={back} bgImage={back} bgColor="#283966">
+          <Slide bgImage={back} bgColor="#283966">
             <Layout style={{flexDirection: "column"}}>
               <Fit>
                 <Heading fit bold caps textColor="primary">
@@ -87,7 +87,7 @@ export default class Presentation extends Component {
             </Layout>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text margin={30} textSize={60} bold>What is the goal of this workshop?</Text>
             <Text textSize={28}>To build your own portfolio from ground-up and publish it on the web, using a CMS powered GraphQL server and a javascript React app</Text>
             <Notes>
@@ -165,7 +165,7 @@ export default class Presentation extends Component {
             </List>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text margin={30}>Wrapping our app with Apollo</Text>
             <Layout style={{alignItems: "center"}}>
               <Fill>
@@ -180,7 +180,7 @@ export default class Presentation extends Component {
             </Layout>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text margin={30}>The <S type={"italic"}>basic</S> client</Text>
 
             <Layout style={{alignItems: "center"}}>
@@ -190,26 +190,26 @@ export default class Presentation extends Component {
             </Layout>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text margin={30} textSize={35}>React: the common use-case</Text>
             <CodePane textSize={22} source={ReactComponentBasicFetchData} lang={"javascript"}/>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text>So, what does Apollo + GraphQL have to offer to make it simpler?</Text>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
               <Text margin={30} textSize={35}>This is what it looks like</Text>
               <CodePane textSize={22} source={ReactComponentWithQueryBasic} lang={"javascript"}/>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text margin={30} textSize={35}>But wait, there's a lot of <S type={"italic"}>noise</S> in that code 🤔</Text>
               <CodePane textSize={22} source={ApolloPropsPoluted} lang={"javascript"}/>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Layout>
               <Fill>
             <Text margin={30} textSize={35}>The <Code lang={"javascript"}>graphql</Code> function second parameter</Text>
@@ -218,7 +218,7 @@ export default class Presentation extends Component {
             </Layout>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Layout>
               <Fill>
                 <Text margin={30} textSize={35}>This way, our component will look like this 👇</Text>
@@ -227,7 +227,7 @@ export default class Presentation extends Component {
             </Layout>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Layout style={{alignItems: "center"}}>
               <Fill>
                 <CodePane textSize={18} source={ReactComponentWithQueryBasic} lang={"javascript"}/>
@@ -241,8 +241,12 @@ export default class Presentation extends Component {
             </Layout>
           </Slide>
 
-          <Slide bgImage={back} bgImage={back}>
+          <Slide bgImage={back}>
             <Text textSize={80} margin={30} bold>Your turn now! 💪</Text>
+          </Slide>
+
+          <Slide bgImage={back}>
+            <Text textSize={80} margin={30} bold>Thank you!</Text>
           </Slide>
         </Deck>
     );

@@ -16,7 +16,7 @@ export default class App extends Component {
         <Router>
           <section className={"main"}>
             <Route exact path="/" component={ProjectsList}/>
-            <Route exact path="/project/:id" component={ProjectDetail} />
+            <Route exact path="/project/:id" render={() => ''} />
           </section>
         </Router>
       </Fragment>

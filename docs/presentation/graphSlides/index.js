@@ -35,7 +35,44 @@ const BodyText = ({ children, ...other }) => (
     <Text textSize={28} {...other}>{children}</Text>
 );
 
+const structureWords = [
+  'Setup',
+  'Build GraphQL service',
+  'Build Folio app using React',
+  'Deploy using Firebase',
+];
+
+const glossaryWords = [
+  'Git',
+  'Node',
+  'GraphQL',
+  'GraphCMS',
+  'React',
+  'React Apollo',
+  'Firebase'
+];
+
 const Slides = [
+  <Fragment>
+    <TitleText bold>4 stages</TitleText>
+    <div style={{ textAlign: "center" }}>
+      {structureWords.map((word) => (
+          <Appear>
+            <ListItem textColor={"black"}>{word}</ListItem>
+          </Appear>
+      ))}
+    </div>
+  </Fragment>,
+    <Fragment>
+      <TitleText bold>glossary</TitleText>
+      <div style={{ textAlign: "center" }}>
+        {glossaryWords.map((word) => (
+          <Appear>
+            <ListItem textColor={"black"}>{word}</ListItem>
+          </Appear>
+        ))}
+      </div>
+    </Fragment>,
   <Fragment>
     <Image src={GraphLogo}/>
     <TitleText bold>GraphQL</TitleText>

@@ -145,8 +145,3 @@ firebase init
 ```
 firebase deploy
 ```
-
-
-
-#### Extra
-You can try their BETA https://beta.graphcms.com

@@ -1,6 +1,4 @@
 
-[![45596986-10155980546872358-2403534183549894656-o.jpg](https://i.postimg.cc/BZTGq4jw/45596986-10155980546872358-2403534183549894656-o.jpg)](https://postimg.cc/z3GQ7mSn)
-
 # Up and running with React and GraphQL
 
 This workshop is about learning about how to build simple react components and connect them to a graphql layer.
